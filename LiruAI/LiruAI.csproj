@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AADA7FB2-5565-4466-9057-A66D3CF15DED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LiruAI</RootNamespace>
+    <AssemblyName>LiruAI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\IDataPoint.cs" />
+    <Compile Include="Data\IDataSet.cs" />
+    <Compile Include="IO\INetworkLoader.cs" />
+    <Compile Include="IO\INetworkSaver.cs" />
+    <Compile Include="IO\XmlFileConstants.cs" />
+    <Compile Include="IO\XmlNetworkLoader.cs" />
+    <Compile Include="IO\XmlNetworkSaver.cs" />
+    <Compile Include="IReadOnlyNeuralNetwork.cs" />
+    <Compile Include="Learning\IReadOnlyNetworkChange.cs" />
+    <Compile Include="Learning\IReadOnlyNeuronLayerChange.cs" />
+    <Compile Include="Learning\IReadOnlyWeightLayerChange.cs" />
+    <Compile Include="Learning\WeightLayerChange.cs" />
+    <Compile Include="Maths\IErrorFunction.cs" />
+    <Compile Include="Maths\SquaredError.cs" />
+    <Compile Include="Maths\TanH.cs" />
+    <Compile Include="Neurons\IReadOnlyNeuron.cs" />
+    <Compile Include="Layers\IInputLayer.cs" />
+    <Compile Include="Layers\ILinkableNeuronLayer.cs" />
+    <Compile Include="Layers\INextWeightLayer.cs" />
+    <Compile Include="Layers\IOutputLayer.cs" />
+    <Compile Include="Layers\IPreviousWeightLayer.cs" />
+    <Compile Include="Layers\IReadOnlyNeuronLayer.cs" />
+    <Compile Include="Layers\IReadOnlyWeightLayer.cs" />
+    <Compile Include="Layers\NeuronLayer.cs" />
+    <Compile Include="Layers\WeightLayer.cs" />
+    <Compile Include="Learning\NeuronLayerChange.cs" />
+    <Compile Include="Learning\NetworkChange.cs" />
+    <Compile Include="Maths\ArrayHelpers.cs" />
+    <Compile Include="Maths\IActivationFunction.cs" />
+    <Compile Include="Maths\Sigmoid.cs" />
+    <Compile Include="NeuralNetwork.cs" />
+    <Compile Include="Neurons\Neuron.cs" />
+    <Compile Include="Output\INetworkLogger.cs" />
+    <Compile Include="Output\NetworkConsoleLogger.cs" />
+    <Compile Include="Output\OutputOptions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
